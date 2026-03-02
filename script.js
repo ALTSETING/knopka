@@ -1,4 +1,4 @@
-const API_URL = (window.localStorage.getItem('api_url') || 'http://localhost:8000').replace(/\/$/, '');
+const API_URL = (window.localStorage.getItem('api_url') || 'https://knopka-xc6q.onrender.com').replace(/\/$/, '');
 
 const statsLabels = {
   done: 'Done',
