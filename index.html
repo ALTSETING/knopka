@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaskFlow Ultra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="phone intro-panel">
+        <div class="shape-grid"></div>
+        <h1>Manage your daily tasks</h1>
+        <p>Team and project management with solution providing app</p>
+        <button class="primary">Get Started</button>
+      </section>
+
+      <section class="phone dashboard-panel">
+        <header class="panel-header">
+          <div>
+            <p class="sub">Hi <span id="username">Ghulam</span></p>
+            <h2><span id="pending">6</span> Tasks are pending</h2>
+          </div>
+          <img id="avatar" src="https://i.pravatar.cc/100?img=12" alt="avatar" />
+        </header>
+
+        <article class="feature-task">
+          <h3 id="featuredTitle">Mobile App Design</h3>
+          <p id="featuredAssignees">Mike and Anita</p>
+          <span class="tag">Now</span>
+        </article>
+
+        <div class="stats" id="statsGrid"></div>
+      </section>
+
+      <section class="phone schedule-panel">
+        <h2>April</h2>
+        <div class="timeline" id="timeline"></div>
+
+        <form id="taskForm" class="task-form">
+          <input name="title" placeholder="New task title" required />
+          <input name="time" placeholder="14:00 - 15:00" required />
+          <button type="submit">Add task</button>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
