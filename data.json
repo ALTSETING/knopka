@@ -1,0 +1,48 @@
+{
+  "user": {
+    "name": "Ghulam",
+    "avatar": "https://i.pravatar.cc/100?img=12",
+    "pending": 6
+  },
+  "stats": {
+    "done": 22,
+    "in_progress": 7,
+    "ongoing": 10,
+    "waiting_review": 12
+  },
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Mobile App Design",
+      "assignees": [
+        "Mike",
+        "Anita"
+      ],
+      "time": "09:00 - 10:00",
+      "status": "in_progress",
+      "date": "2026-04-12"
+    },
+    {
+      "id": 2,
+      "title": "Software Testing",
+      "assignees": [
+        "Anita",
+        "David"
+      ],
+      "time": "10:00 - 11:20",
+      "status": "ongoing",
+      "date": "2026-04-12"
+    },
+    {
+      "id": 3,
+      "title": "Web Development",
+      "assignees": [
+        "Mike",
+        "Anita"
+      ],
+      "time": "13:00 - 14:00",
+      "status": "waiting_review",
+      "date": "2026-04-12"
+    }
+  ]
+}
