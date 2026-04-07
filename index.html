@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AchieveX | Трекер Досягнень</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="sidebar">
+        <div class="logo">
+            <h2>Achieve<span class="blue-text">X</span></h2>
+        </div>
+        <ul class="nav-links">
+            <li class="active" data-tab="dashboard"><i class="fas fa-chart-pie"></i> Дашборд</li>
+            <li data-tab="ai"><i class="fas fa-robot"></i> AI Асистент</li>
+            <li data-tab="goals"><i class="fas fa-bullseye"></i> Цілі</li>
+            <li data-tab="habits"><i class="fas fa-check-square"></i> Звички</li>
+            <li data-tab="focus"><i class="fas fa-clock"></i> Фокус</li>
+            <li data-tab="mood"><i class="fas fa-smile"></i> Настрій</li>
+            <li data-tab="shop"><i class="fas fa-store"></i> Магазин</li>
+            <li data-tab="leaderboard"><i class="fas fa-trophy"></i> Лідери</li>
+            <li data-tab="settings"><i class="fas fa-cog"></i> Налаштування</li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="user-stats">
+                <div class="stat-badge"><i class="fas fa-star"></i> Рівень <span id="level-display">5</span></div>
+                <div class="stat-badge"><i class="fas fa-bolt"></i> <span id="xp-display">1250</span> XP</div>
+                <div class="stat-badge"><i class="fas fa-coins"></i> <span id="coins-display">340</span> Монет</div>
+            </div>
+            <div class="user-controls">
+                <button id="lang-toggle">UA | EN</button>
+                <div class="avatar"><i class="fas fa-user"></i></div>
+            </div>
+        </header>
+
+        <div class="tab-content">
+            <section id="dashboard" class="tab-pane active">
+                <h1>Огляд прогресу</h1>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Активність за тиждень</h3>
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                    <div class="card summary-card">
+                        <h3>Сьогодні</h3>
+                        <p>Виконано звичок: <strong>4/5</strong></p>
+                        <p>Фокус-сесій: <strong>2</strong></p>
+                        <button class="btn-primary" onclick="exportICS()">Експорт в .ics</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ai" class="tab-pane">
+                <h1>AI Наставник (Llama-3)</h1>
+                <div class="chat-container">
+                    <div class="chat-box" id="chat-box">
+                        <div class="message ai-message">Привіт! Я твій AI-асистент. Яку ціль розберемо сьогодні?</div>
+                    </div>
+                    <div class="chat-input-area">
+                        <button class="voice-btn"><i class="fas fa-microphone"></i></button>
+                        <input type="text" id="ai-input" placeholder="Напиши повідомлення...">
+                        <button class="btn-primary" onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="focus" class="tab-pane">
+                <h1>Режим Фокусу</h1>
+                <div class="pomodoro-container card">
+                    <div class="timer-display" id="timer">25:00</div>
+                    <div class="timer-controls">
+                        <button class="btn-primary" id="start-timer">Старт</button>
+                        <button class="btn-secondary" id="stop-timer">Стоп</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="habits" class="tab-pane">
+                <h1>Трекер Звичок</h1>
+                <div class="habits-list card" id="habits-list">
+                    <div class="habit-item">
+                        <div class="habit-info">
+                            <h4>Ранкове тренування</h4>
+                            <span class="streak"><i class="fas fa-fire"></i> 12 днів</span>
+                        </div>
+                        <div class="habit-actions">
+                            <button class="btn-icon"><i class="fas fa-camera"></i></button>
+                            <button class="btn-icon check"><i class="fas fa-check"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="goals" class="tab-pane"><h1>Цілі</h1><p class="placeholder-text">Інтеграція бекенду для цілей...</p></section>
+            <section id="mood" class="tab-pane"><h1>Журнал Настрою</h1><p class="placeholder-text">Відстеження емоцій...</p></section>
+            <section id="shop" class="tab-pane"><h1>Магазин Тем</h1><p class="placeholder-text">Тут можна витратити монети...</p></section>
+            <section id="leaderboard" class="tab-pane"><h1>Топ-10 Лідерів</h1><p class="placeholder-text">Глобальний рейтинг...</p></section>
+            <section id="settings" class="tab-pane"><h1>Налаштування</h1><p class="placeholder-text">Налаштування шифрування, акаунта...</p></section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
